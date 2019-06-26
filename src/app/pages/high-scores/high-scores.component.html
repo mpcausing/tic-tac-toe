@@ -1,0 +1,12 @@
+<div>
+  <p>
+    <a routerLink="/" class="external-link">Play</a>.
+  </p>
+
+  <h3>Top 20 High Scores</h3>
+  <div class="parent" *ngFor="let score of scores; let i = index">
+    <div class="index">{{i + 1}}.</div>
+    <div class="name">{{score.name}}</div>
+    <div>{{score.score}}</div>
+  </div>
+</div>

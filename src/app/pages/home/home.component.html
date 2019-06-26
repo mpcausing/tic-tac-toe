@@ -1,0 +1,32 @@
+<div>
+  <div class="play" *ngIf="!play">
+    <h4 *ngIf="!init">{{message}}</h4>
+    <button (click)="onPlay()">Play{{init ? '' : ' again'}}</button>
+    <button *ngIf="!init" (click)="reset()">Reset</button>
+
+    <p>
+      <a routerLink="/high-scores" class="external-link">High Scores</a>.
+    </p>
+  </div>
+
+  <div *ngIf="showSettingForName">
+    <div>Player 1 name<input [(ngModel)]="players.a.name" type="text"></div>
+    <div>Player 2 name<input [(ngModel)]="players.b.name" type="text"></div>
+    <button (click)="onSetName()">Set Names</button>
+  </div>
+
+  <div *ngIf="(play && !showSettingForName) || (!init && !showSettingForName)">
+      <p><strong>Name:</strong>{{ players.a.name }}</p>
+      <p><strong>Score:</strong>{{ players.a.score }}</p>
+      <p><strong>Name:</strong>{{ players.b.name }}</p>
+      <p><strong>Score:</strong>{{ players.b.score }}</p>
+
+      <div>
+        <div class="parent" *ngFor="let row of tokens; let p = index">
+          <div class="item" *ngFor="let item of row; let i = index" (click)="checkWinner(p, i)">
+            {{item ? (item === 1 ? 'X' : 'O') : ''}}
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

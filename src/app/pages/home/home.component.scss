@@ -1,0 +1,33 @@
+.play{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #0000005c;
+  padding-top: 20px;
+
+  button{
+    margin: 10px;
+  }
+}
+
+.parent{
+  display: flex;
+  justify-content: center;
+
+  .item{
+    color: blue;
+    min-width: 75px;
+    min-height: 75px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 2px solid black;
+    margin: 1px;
+    font-size: 40px;
+  }
+}

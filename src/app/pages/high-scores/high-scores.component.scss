@@ -1,0 +1,10 @@
+.parent{
+  display: flex;
+
+  .index{
+    min-width: 25px;
+  }
+  .name{
+    min-width: 160px;
+  }
+}
