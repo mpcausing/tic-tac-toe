@@ -8,5 +8,4 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/tic-tac-toe/index.html'));
 });
 
-console.log(process.env.PORT)
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 3001);
